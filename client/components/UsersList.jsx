@@ -12,15 +12,16 @@ function UsersList (props) {
 
   console.log(users)
   return (
-
-    <ul>
-      {users.map((user) =>
-        <>
-          <li>My name is {user.name}</li>
-          <li>It is {user.isHotpot}, that I am a hotpot</li>
-        </>
-      )}
-    </ul>
+    <>
+      <h1>Users List</h1>
+      <ul>
+        {users.map((user) =>
+          <>
+            <li key={user.id}>My name is {user.name}</li>
+          </>
+        )}
+      </ul>
+    </>
   )
 }
 

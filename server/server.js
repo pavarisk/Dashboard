@@ -11,11 +11,4 @@ server.use(cors('*'))
 
 server.use('/api/v1/users', users)
 
-server.get('/greeting', (req, res) => {
-  const greetings = ['hola', 'hi', 'hello', 'howdy']
-  const index = Math.floor(Math.random() * greetings.length)
-  console.log(index)
-  res.json({ greeting: greetings[index] })
-})
-
 module.exports = server
