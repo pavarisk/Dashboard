@@ -2,7 +2,7 @@ exports.up = function (knex) {
   return knex.schema.createTable('users', table => {
     table.increments('id')
     table.string('name')
-    table.bool('isHotpot')
+    table.int('age')
   })
 }
 
