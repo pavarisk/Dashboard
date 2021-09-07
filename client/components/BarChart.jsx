@@ -22,7 +22,7 @@ function BarChart () {
   }, [])
 
   return (
-    <div id='barchart'>
+    <div id='barchart' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto' }}>
       <svg ref={d3chart}></svg>
     </div>
   )

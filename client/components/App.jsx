@@ -9,7 +9,7 @@ const App = () => {
     <div style={{ display: 'flex' }}>
       <SideMenu style={{ color: 'white', backgroundColor: 'black' }}/>
       <div>
-        <UsersList getUsers={getUsers}/>
+        {/* <UsersList getUsers={getUsers}/> */}
         <BarChart />
       </div>
     </div>
