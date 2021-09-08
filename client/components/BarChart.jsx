@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { drawChart } from './charts/barchart'
 
 function BarChart () {
-  const [data, setData] = useState([])
   const d3chart = useRef()
 
   useEffect(() => {
@@ -14,7 +13,7 @@ function BarChart () {
         data.map(person => {
           return count.push(person.age)
         })
-        setData(count)
+
         drawChart(400, 600, count)
         return null
       })
@@ -22,7 +21,7 @@ function BarChart () {
   }, [])
 
   return (
-    <div id='barchart' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto' }}>
+    <div id='barchart' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: '50 px', marginRight: 'auto' }}>
       <svg ref={d3chart}></svg>
     </div>
   )
