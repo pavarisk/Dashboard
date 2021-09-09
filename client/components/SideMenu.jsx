@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function SideMenu (props) {
   return (
-    <div style={{ color: 'white', backgroundColor: 'black', width: '150px', minHeight: '100vh', marginLeft: '0', padding: '30px' }}>
-      <h3>Home</h3>
-      <h3>Users List</h3>
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'left', padding: '30px', color: 'white', backgroundColor: 'black', width: '150px', minHeight: '100vh' }}>
+      <Link to='/'>Home</Link>
+      <Link to='/login'>Login</Link>
     </div>
   )
 }
