@@ -2,10 +2,16 @@ import React from 'react'
 
 function LoginPage () {
   return (
-    <div>
-      <form action="submit" type='text' placeholder='Username'></form>
-      <form action='submit' type='password' placeholder='Password'></form>
-    </div>
+    <>
+      <div>
+        <label htmlFor="user_name">Username: </label>
+        <input name='user_name' type='text' placeholder='Username'></input>
+      </div>
+      <div>
+        <label htmlFor="password">Password: </label>
+        <input name='password' type='password' placeholder='Password'></input>
+      </div>
+    </>
   )
 }
 
