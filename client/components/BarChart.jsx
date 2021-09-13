@@ -8,7 +8,6 @@ function BarChart () {
     fetch('/api/v1/users')
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         const count = []
         data.map(person => {
           return count.push(person.age)
@@ -21,7 +20,7 @@ function BarChart () {
   }, [])
 
   return (
-    <div id='barchart' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: '50 px', marginRight: 'auto' }}>
+    <div id='barchart' className='d-flex flex-column align-items-center'>
       <svg ref={d3chart}></svg>
     </div>
   )
