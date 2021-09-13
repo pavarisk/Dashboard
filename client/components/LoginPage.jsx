@@ -28,17 +28,17 @@ function LoginPage (props) {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', padding: '10px' }}>
-      <div>
-        <label htmlFor="name">Name: </label>
-        <input name='name' type='text' placeholder="User's Name" onChange={handleName}/>
+    <div className='container p-4'>
+      <div className='mb-3'>
+        <label htmlFor="name" className='form-label'>Name: </label>
+        <input name='name' type='text' placeholder="User's Name" className='form-control' onChange={handleName}/>
       </div>
-      <div>
-        <label htmlFor="pin">Pin: </label>
-        <input name='pin' type='password' placeholder='Pin' onChange={handlePin}/>
+      <div className='mb-3'>
+        <label htmlFor="pin" className='form-label'>Pin: </label>
+        <input name='pin' type='password' placeholder='Pin' className='form-control' onChange={handlePin}/>
       </div>
-      <div>
-        <button onClick={handleClick}>Log In</button>
+      <div className='mb-3'>
+        <button className='btn-dark' onClick={handleClick}>Log In</button>
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
-import { getUsers } from '../apiClient'
-import UsersList from './UsersList'
+// import { getUsers } from '../apiClient'
+// import UsersList from './UsersList'
 import SideMenu from './SideMenu'
 import BarChart from './BarChart'
 import LoginPage from './LoginPage'
