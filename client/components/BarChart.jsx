@@ -8,6 +8,7 @@ function BarChart () {
     fetch('/api/v1/users')
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         const count = []
         data.map(person => {
           return count.push(person.age)

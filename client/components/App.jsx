@@ -8,8 +8,8 @@ import { Route } from 'react-router-dom'
 
 const App = () => {
   return (
-    <div style={{ display: 'flex' }}>
-      <Route path='/' component={SideMenu} style={{ color: 'white', backgroundColor: 'black' }}/>
+    <div className="d-flex mx-auto">
+      <Route path='/' component={SideMenu} />
       <Route exact path='/' component={BarChart} />
       <Route exact path ='/login' component={LoginPage} />
     </div>

@@ -19,7 +19,7 @@ function LoginPage (props) {
 
   function handleClick (e) {
     e.preventDefault()
-    console.log('Click has been handled')
+    setError()
     getUserByName(userName)
       .then(res => {
         if (res === null) {
@@ -40,12 +40,12 @@ function LoginPage (props) {
         <input name='name' type='text' placeholder="User's Name" className='form-control' required onChange={handleName}/>
       </div>
       <div className='mb-3'>
-        <label htmlFor="pin" className='form-label'>Pin: </label>
-        <input name='pin' type='password' placeholder='Pin' className='form-control' required onChange={handlePin}/>
+        <label htmlFor="pin" className='form-label'>PIN: </label>
+        <input name='pin' type='password' placeholder='PIN' className='form-control' required onChange={handlePin}/>
       </div>
       <div className='mb-3'>
         <button className='btn-dark' onClick={handleClick}>Log In</button>
-        {loading && <p className='mt-3'>Loading</p>}
+        {loading && <p className='mt-3'>Loading...</p>}
       </div>
     </div>
   )
