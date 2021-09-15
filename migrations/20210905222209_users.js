@@ -4,6 +4,7 @@ exports.up = function (knex) {
     table.string('name')
     table.int('age')
     table.int('pin')
+    table.bool('admin')
   })
 }
 
