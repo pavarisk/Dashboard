@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { getUserByName } from '../apiClient'
+import { connect } from 'react-redux'
+import { userAuth } from '../action/authenticated'
 
 function LoginPage (props) {
+  const { dispatch } = props
   const [userName, setUserName] = useState('')
   const [pin, setPin] = useState('')
   const [error, setError] = useState()
@@ -25,7 +28,9 @@ function LoginPage (props) {
         if (res === null) {
           return setError('The user and pin provided does not match our records')
         } else if (pin === res.pin) {
+          dispatch(userAuth(res))
           setLoading(true)
+          console.log(props)
           return setTimeout(() => props.history.push('/'), 2000)
         } else return setError('The user and pin provided does not match our records')
       })
@@ -51,4 +56,11 @@ function LoginPage (props) {
   )
 }
 
-export default LoginPage
+function mapStateToProps (state) {
+  console.log(state)
+  return {
+    authenticated: state.authenticated
+  }
+}
+
+export default connect(mapStateToProps)(LoginPage)

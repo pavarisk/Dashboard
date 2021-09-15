@@ -5,8 +5,8 @@ const initialState = {}
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case AUTHENTICATED:
-      console.log(action.auth)
-      return state
+      console.log(state)
+      return action.auth
     default:
       return state
   }
