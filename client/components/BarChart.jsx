@@ -7,16 +7,16 @@ function BarChart (props) {
   const d3chart = useRef()
 
   useEffect(() => {
-    fetch('/api/v1/users')
+    fetch('/api/v1/data')
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        const count = []
-        data.map(person => {
-          return count.push(person.age)
+        const values = []
+        data.map(entry => {
+          return values.push(entry.value)
         })
 
-        drawChart(400, 600, count)
+        drawChart(400, 600, values)
         return null
       })
       .catch(e => console.log(e.message))
