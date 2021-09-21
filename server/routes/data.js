@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const data = req.body
+  const {data} = req.body
   db.newEntry(data)
     .then(result => {
       console.log(result)
