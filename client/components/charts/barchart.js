@@ -33,6 +33,13 @@ export function drawChart (height, width, data) {
     .attr('height', (d) => yScale(d))
     .attr('y', (d) => height - yScale(d))
 
+  svg.append('text')
+    .attr('class', 'x label')
+    .attr('text-anchor', 'end')
+    .attr('x', width)
+    .attr('y', height - 6)
+    .text('hello there obi won')
+
   selection
 
     .exit()
@@ -41,3 +48,7 @@ export function drawChart (height, width, data) {
     .attr('height', 0)
     .remove()
 }
+// const canvas = document.getElementById('canvas')
+// const ctx = canvas.getContext('2d')
+
+// ctx.fillRect('drawChar')

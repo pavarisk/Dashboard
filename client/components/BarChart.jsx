@@ -22,14 +22,14 @@ function BarChart (props) {
   }, [])
 
   return (<>
-    <canvas id="barchart" >
-      <div className='d-flex flex-column' >
-        {authenticated.name && <h1 className='pt-4 text-center'>Hello {authenticated.name}</h1>}
-        {/* <div id='barchart' className='d-flex flex-column align-items-center'> */}
-        <svg ref={d3chart}></svg>
-      </div>
+
+    <div className='d-flex flex-column'>
+      {authenticated.name && <h1 className='pt-4 text-center'>Hello {authenticated.name}</h1>}
+      <div id='barchart' className='d-flex flex-column align-items-center'/>
+      <svg ref={d3chart}><rect height='30' width='40'></rect></svg><br/>
       {/* </div> */}
-    </canvas>
+      <canvas id='barchart' className='d-flex flex-column align-items-center'></canvas><br/></div>
+
   </>)
 }
 
