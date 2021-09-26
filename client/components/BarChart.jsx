@@ -16,7 +16,7 @@ function BarChart (props) {
           return values.push(entry.value)
         })
 
-        drawChart(400, 600, values)
+        drawChart(500, 800, values)
         return null
       })
       .catch(e => console.log(e.message))
