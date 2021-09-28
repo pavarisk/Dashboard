@@ -17,7 +17,8 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "webpack": "webpack --config ./client/webpack.config.js",
-    "lint": "eslint --ext .js,.jsx ."
+    "lint": "eslint --ext .js,.jsx .",
+    "dbs": "npx knex migrate:latest && npx knex seed:run"
   },
   "keywords": [
     "frontend"
