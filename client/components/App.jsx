@@ -1,10 +1,10 @@
-import React /* ,{ useState, useEffect }*/ from 'react'
+import React /* ,{ useState, useEffect } */ from 'react'
 // import { getUsers } from '../apiClient'
 // import UsersList from './UsersList'
 import SideMenu from './SideMenu'
-// import BarChart from './BarChart'
+import BarChart from './BarChart'
 // import { useCanvas } from './hooks/useCanvas'
-import { Canvas } from './Canvas'
+// import { Canvas } from './Canvas'
 import LoginPage from './LoginPage'
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -41,13 +41,14 @@ const App = (props) => {
         width={canvasWidth}
         height={CanvasHeight}
         onClick={handleCanvasClick}
-      /> */}<canvas></canvas><script src='./charts/barChart' />
+      /> */}
+      {/* <canvas></canvas><script src='./charts/canvasHooks' /> */}
       {/* {loaded ? 'script loaded' : 'script not loaded'} */}
-      {/* <div className='button'>
-        <button onClick={handleClearCanvas}> CLEAR </button>
-      </div> */}
+      {/* <div className='button'> */}
+      {/* <button onClick={handleClearCanvas}> CLEAR </button> */}
+      {/* </div> */}
       {/* </main> */}
-      {/* <Route exact path='/' component={BarChart} /> */}
+      <Route exact path='/' component={BarChart} />
       <Route exact path ='/login' component={LoginPage} />
     </div>
   </>)

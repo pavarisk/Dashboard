@@ -21,14 +21,47 @@ function BarChart (props) {
       .catch(e => console.log(e.message))
   }, [])
 
-  return (<>
+  // const d3chart = React.useRef<HTMLCanvasElement>(null)
+  // function loaded(
+  //   const canvasRef = useRef(null)
+  //   const canvasObj = canvasRef.current
+  //   const ctx = canvasObj.getcontext('2d')
+  // )
 
-    <div className='d-flex flex-column'>
+  const canvas = document.getElementById('canvas')
+
+  if (canvas != null) {
+    canvas.getContext('2d')
+  } else {
+    // console.log(e.message)
+  }
+
+  // useEffect(() => {
+
+  // }, [ctx])
+
+  return (<>
+    <div
+      style={{
+        textAlign: 'center'
+      }}>
+      <canvas
+        id="canvas"
+        ref={d3chart}
+        width={500}
+        height={500}
+        style={{
+          border: '2px solid #000',
+          marginTop: 10
+        }}
+      ></canvas>
+    </div>
+    {/* <div className='d-flex flex-column'>
       {authenticated.name && <h1 className='pt-4 text-center'>Hello {authenticated.name}</h1>}
       {/* <div id='barchart' className='d-flex flex-column align-items-center'/> */}
-      <svg id='barchart'></svg><br/>
-      {/* </div> */}
-      <canvas id='canvaseta' className='d-flex flex-column align-items-center'></canvas><br/></div>
+
+    {/* </div> */}
+    {/* <canvas id='canvaseta'></canvas><svg id='barchart'></svg><br/> </div> */}
 
   </>)
 }
