@@ -1,4 +1,5 @@
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: path.join(__dirname, 'index.js'),
@@ -20,5 +21,9 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     contentBase: path.join(__dirname, '../server/public')
-  }
+  },
+  plugins: [
+    new Dotenv()
+  ]
+
 }

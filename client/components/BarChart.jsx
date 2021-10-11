@@ -5,18 +5,20 @@ import { connect } from 'react-redux'
 function BarChart (props) {
   const { authenticated } = props
   const d3chart = useRef()
+  const apiKey = process.env.API_KEY
 
   useEffect(() => {
-    fetch('/api/v1/data')
+    fetch(`https://api.airtable.com/v0/appGoOyAJaaiLpXRD/Test1/?api_key=${apiKey}`)
       .then(response => response.json())
-      .then(data => {
-        console.log(data)
+      .then(result => {
+        const records = result.records
+        console.log(records)
         const values = []
-        data.map(entry => {
-          return values.push(entry.value)
+        records.map(entry => {
+          return values.push(entry.fields['Favourite number'])
         })
 
-        drawChart(400, 600, values)
+        drawChart(500, 800, values)
         return null
       })
       .catch(e => console.log(e.message))

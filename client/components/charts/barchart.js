@@ -1,5 +1,12 @@
 import * as d3 from 'd3'
 
+const margin = {
+  top: 20,
+  bottom: 20,
+  left: 10,
+  right: 10
+}
+
 export function drawChart (height, width, data) {
   const svg = d3.select('#barchart')
 
@@ -16,7 +23,7 @@ export function drawChart (height, width, data) {
 
     .domain([0, d3.max(data)])
 
-    .range([0, height - 100])
+    .range([0, height - margin.bottom, margin.top])
 
   selection
 
