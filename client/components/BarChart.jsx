@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 function BarChart (props) {
   const { authenticated } = props
   const canvas = useRef(null)
-  const [image, setImage] = useState(null)
+  // const [image, setImage] = useState(null)
 
   // const onLoaded = () => {
   useEffect(() => {
@@ -23,22 +23,22 @@ function BarChart (props) {
       .catch(e => console.log(e.message))
   }, [])
 
-  useEffect(() => {
-    const catImage = new Image()
-    console.log(catImage)
-    catImage.src = 'https://thiscatdoesnotexist.com/'
-    catImage.onLoad = () => setImage(catImage)
-  }, [])
+  // useEffect(() => {
+  //   const catImage = new Image()
+  //   console.log(catImage)
+  //   catImage.src = 'https://thiscatdoesnotexist.com/'
+  //   catImage.onLoad = () => setImage(catImage)
+  // }, [])
 
-  useEffect(() => {
-    if (image && canvas) {
-      console.log(image, 'hi')
-      const ctx = canvas.current.getContext('2d')
-      ctx.fillStyle = 'black'
-      ctx.fillRect(0, 0, 400, 256 + 80)
-      ctx.drawImage(image, (400 - 256) / 2, 40)
-    }
-  }, [image, canvas])
+  // useEffect(() => {
+  //   if (image && canvas) {
+  //     console.log(image, 'hi')
+  //     const ctx = canvas.current.getContext('2d')
+  //     ctx.fillStyle = 'black'
+  //     ctx.fillRect(0, 0, 400, 256 + 80)
+  //     ctx.drawImage(image, (400 - 256) / 2, 40)
+  //   }
+  // }, [image, canvas])
   // }
   // async function drawImg () {
   //   const ctx = document.getElementById('canvas').getContext('2d')
@@ -97,7 +97,9 @@ function BarChart (props) {
           marginLeft: 10
         }}
         // imgsrc={'draw ? 1 : 0'}
-      ></canvas>
+      ></canvas><div id='barchart'></div>
+      {/* <div id="my_dataviz"></div> */}
+
     </div>
     {/* <div className='d-flex flex-column'>
       {authenticated.name && <h1 className='pt-4 text-center'>Hello {authenticated.name}</h1>}
