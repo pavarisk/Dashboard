@@ -4,20 +4,24 @@ import { connect } from 'react-redux'
 function BarChart (props) {
   const { authenticated } = props
   const canvas = useRef(null)
-  // const [image, setImage] = useState(null)
+  // const [image, setImage] = useState(null)x
+  const apiKey = process.env.API_KEY
 
   // const onLoaded = () => {
   useEffect(() => {
-    fetch('/api/v1/data')
+    fetch(`https://api.airtable.com/v0/appGoOyAJaaiLpXRD/Test1/?api_key=${apiKey}`)
       .then(response => response.json())
-      .then(data => {
-        console.log(data)
+      .then(result => {
+        const records = result.records
+        console.log(records)
         const values = []
-        data.map(entry => {
-          return values.push(entry.value)
+        records.map(entry => {
+          return values.push(entry.fields['Favourite number'])
         })
         console.log(values)
         drawChart(400, 600, values)
+
+        drawChart(500, 800, values)
         return null
       })
       .catch(e => console.log(e.message))
