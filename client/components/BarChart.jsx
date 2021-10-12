@@ -17,7 +17,7 @@ function BarChart (props) {
         console.log(records)
         const values = []
         records.map(entry => {
-          return values.push(entry.fields['Themes'])
+          return values.push(entry.fields.Themes)
         })
         console.log(values)
         drawChart(400, 600, values)
@@ -103,8 +103,8 @@ function BarChart (props) {
         }}
         // imgsrc={'draw ? 1 : 0'}
       ></canvas> */}
-      <div id='barchart'></div>
-      {/* <div id="my_dataviz"></div> */}
+    <div id='barchart'></div>
+    {/* <div id="my_dataviz"></div> */}
 
     {/* </div> */}
     {/* <div className='d-flex flex-column'>

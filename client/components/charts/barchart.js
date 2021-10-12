@@ -6,6 +6,10 @@ export function drawChart (data) {
   const width = 460 - margin.left - margin.right
   const height = 400 - margin.top - margin.bottom
   const apiKey = 'keyXCRFCVvC2BeonX'
+  const tableData = {}
+  function (data){
+    
+  }
   // append the svg object to the body of the page
   const svg = d3.select('#barchart')
     .append('svg')
@@ -14,14 +18,16 @@ export function drawChart (data) {
     .append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`)
   // Parse the Data
-  d3.csv(`https://api.airtable.com/v0/appGoOyAJaaiLpXRD/Test1/?api_key=${apiKey}`).then(function (data) {
-    // X axis
+  d3.csv(`https://api.airtable.com/v0/appGoOyAJaaiLpXRD/Test1/?api_key=${apiKey}`).then(result => {
     const records = result.records
     console.log(records)
     const values = []
     records.map(entry => {
-      return values.push(entry.fields['Themes'])
+      return values.push(entry.fields.Themes)
     })
+    return null
+  }).then(function (data) {
+    // X axis
     console.log(data, typeof data)
     const x = d3.scaleBand()
       .range([0, width])
@@ -50,7 +56,6 @@ export function drawChart (data) {
       .attr('width', x.bandwidth())
       .attr('height', d => height - y(d.Themes))
       .attr('fill', '#5499C7')
-      .close()
-  }) return null
-  // .catch(e => console.log(e.message))
+    return null
+  }).catch(e => console.log(e.message))
 }
