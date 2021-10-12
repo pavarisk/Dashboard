@@ -3,9 +3,10 @@ import { drawChart } from './charts/barchart'
 import { connect } from 'react-redux'
 function BarChart (props) {
   const { authenticated } = props
-  const canvas = useRef(null)
+  // const canvas = useRef(null)
   // const [image, setImage] = useState(null)x
-  const apiKey = process.env.API_KEY
+  const apiKey = 'keyXCRFCVvC2BeonX'
+  // const apiKey = process.env.API_KEY
 
   // const onLoaded = () => {
   useEffect(() => {
@@ -16,7 +17,7 @@ function BarChart (props) {
         console.log(records)
         const values = []
         records.map(entry => {
-          return values.push(entry.fields['Favourite number'])
+          return values.push(entry.fields['Themes'])
         })
         console.log(values)
         drawChart(400, 600, values)
@@ -83,7 +84,7 @@ function BarChart (props) {
   // }, [ctx])
 
   return (<>
-    <div
+    {/* <div
       style={{
         textAlign: 'center'
       }}
@@ -101,10 +102,11 @@ function BarChart (props) {
           marginLeft: 10
         }}
         // imgsrc={'draw ? 1 : 0'}
-      ></canvas><div id='barchart'></div>
+      ></canvas> */}
+      <div id='barchart'></div>
       {/* <div id="my_dataviz"></div> */}
 
-    </div>
+    {/* </div> */}
     {/* <div className='d-flex flex-column'>
       {authenticated.name && <h1 className='pt-4 text-center'>Hello {authenticated.name}</h1>}
       {/* <div id='barchart' className='d-flex flex-column align-items-center'/> */}
