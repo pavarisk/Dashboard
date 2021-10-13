@@ -6,10 +6,6 @@ export function drawChart (data) {
   const width = 460 - margin.left - margin.right
   const height = 400 - margin.top - margin.bottom
   const apiKey = 'keyXCRFCVvC2BeonX'
-  const tableData = {}
-  function (data){
-    
-  }
   // append the svg object to the body of the page
   const svg = d3.select('#barchart')
     .append('svg')
