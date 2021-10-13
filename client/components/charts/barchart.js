@@ -1,11 +1,11 @@
 import * as d3 from 'd3'
-
+import {usedata} from './hooks/useData'
 export function drawChart (data) {
 // set the dimensions and margins of the graph
   const margin = { top: 30, right: 30, bottom: 70, left: 60 }
   const width = 460 - margin.left - margin.right
   const height = 400 - margin.top - margin.bottom
-  const apiKey = 'keyXCRFCVvC2BeonX'
+  // const apiKey = process.env.API_KEY
   // append the svg object to the body of the page
   const svg = d3.select('#barchart')
     .append('svg')
@@ -14,15 +14,7 @@ export function drawChart (data) {
     .append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`)
   // Parse the Data
-  d3.csv(`https://api.airtable.com/v0/appGoOyAJaaiLpXRD/Test1/?api_key=${apiKey}`).then(result => {
-    const records = result.records
-    console.log(records)
-    const values = []
-    records.map(entry => {
-      return values.push(entry.fields.Themes)
-    })
-    return null
-  }).then(function (data) {
+  d3.csv(usedata).then(function (data) {
     // X axis
     console.log(data, typeof data)
     const x = d3.scaleBand()
