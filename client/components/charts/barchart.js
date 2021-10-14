@@ -1,11 +1,11 @@
 import * as d3 from 'd3'
-import {usedata} from './hooks/useData'
-export function drawChart (data) {
+// import { useData } from '../hooks/useData'
+// import dataAir from '../BarChart'
+export function drawChart (dataAir, values) {
 // set the dimensions and margins of the graph
   const margin = { top: 30, right: 30, bottom: 70, left: 60 }
   const width = 460 - margin.left - margin.right
   const height = 400 - margin.top - margin.bottom
-  // const apiKey = process.env.API_KEY
   // append the svg object to the body of the page
   const svg = d3.select('#barchart')
     .append('svg')
@@ -14,12 +14,12 @@ export function drawChart (data) {
     .append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`)
   // Parse the Data
-  d3.csv(usedata).then(function (data) {
+  d3.tsv('BarChart.tsv', dataAir).then(function (values) {
     // X axis
-    console.log(data, typeof data)
+    console.log(values, typeof values, 'DataAir' + dataAir)
     const x = d3.scaleBand()
       .range([0, width])
-      .domain(data.map(d => d.Themes))
+      .domain(values.map(d => d.Themes))
       .padding(0.2)
     svg.append('g')
       .attr('transform', `translate(0, ${height})`)
@@ -37,7 +37,7 @@ export function drawChart (data) {
 
     // Bars
     svg.selectAll('barchart')
-      .data(data)
+      .data(values)
       .join('rect')
       .attr('x', d => x(d.Themes))
       .attr('y', d => y(d.Themes))
