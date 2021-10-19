@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
-// import { useData } from '../hooks/useData'
+import { getAirtable } from '../../api/airTableApi'
 // import dataAir from '../BarChart'
-export function drawChart (dataAir, values) {
+export function drawChart (result) {
 // set the dimensions and margins of the graph
   const margin = { top: 30, right: 30, bottom: 70, left: 60 }
   const width = 460 - margin.left - margin.right
@@ -14,9 +14,9 @@ export function drawChart (dataAir, values) {
     .append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`)
   // Parse the Data
-  d3.tsv('BarChart.tsv', dataAir).then(function (values) {
+  getAirtable(result).then(function (values) {
     // X axis
-    console.log(values, typeof values, 'DataAir' + dataAir)
+    console.log(result)
     const x = d3.scaleBand()
       .range([0, width])
       .domain(values.map(d => d.Themes))
