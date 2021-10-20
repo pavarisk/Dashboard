@@ -59,6 +59,7 @@
     "@babel/preset-react": "7.12.13",
     "@testing-library/react": "11.2.5",
     "babel-loader": "^8.2.2",
+    "dotenv": "^10.0.0",
     "dotenv-webpack": "^7.0.3",
     "eslint": "7.9.0",
     "eslint-config-eda": "0.1.4",

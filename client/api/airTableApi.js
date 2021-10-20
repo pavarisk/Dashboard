@@ -5,5 +5,6 @@ const serverURL = '/api/v1'
 export function getAirtable () {
   return request
     .get(`${serverURL}/dashboard`)
-    .then(response => response.body)
+    .then(res => res.body)
+    .catch(e => console.log(e.message))
 }
