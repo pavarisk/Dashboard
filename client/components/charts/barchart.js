@@ -10,7 +10,7 @@ function countArr (data) {
     if (!keys.includes(item)) {
       keys.push(item)
     } else if (keys.includes(item)) {
-		 return keys
+      return keys
     }
   })
   for (let i = 0; i < keys.length; i++) {
@@ -49,19 +49,20 @@ export function drawChart (data) {
 
     // Add Y axis
     const y = d3.scaleLinear()
-      .domain([0, 20])
+      .domain([0, 5])
       .range([height, 0])
     svg.append('g')
       .call(d3.axisLeft(y))
     const arrBeta = countArr(values)
+    console.log(arrBeta)
     // Bars
-    svg.selectAll('barchart')
-      .data(arrBeta)
+    svg.selectAll('circle')
+      .data(countArr(values))
       .join('rect')
-      .attr('x', d => x(d))
+      .attr('x', data => x(data))
       .attr('y', d => y(d))
       .attr('width', x.bandwidth())
-      .attr('height', d => height - y(d))
+      .attr('height', arrBeta => height - y(arrBeta))
       .attr('fill', '#FD0000')
     return null
   }).catch(e => console.log(e.message))
