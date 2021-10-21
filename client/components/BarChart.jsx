@@ -7,6 +7,7 @@ function BarChart (props) {
   const d3chart = useRef()
   const apiKey = process.env.API_KEY
 
+  console.log(apiKey)
   useEffect(() => {
     fetch(`https://api.airtable.com/v0/appGoOyAJaaiLpXRD/Test1/?api_key=${apiKey}`)
       .then(response => response.json())
