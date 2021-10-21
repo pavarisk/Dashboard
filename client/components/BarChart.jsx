@@ -7,8 +7,8 @@ function BarChart (props) {
   useEffect(() => {
     return getAirtable()
       .then((themes) => {
-        console.log(themes)
-        drawChart(400, 600, themes)
+        console.log(themes, 'component')
+        drawChart(themes)
         return null
       })
 

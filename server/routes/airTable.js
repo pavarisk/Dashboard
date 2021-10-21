@@ -12,15 +12,13 @@ router.get('/', (req, res) => {
     .then(result => {
       const records = result.records
       const data = []
-      // console.log(records)
       records.map(entry => {
-        return data.push(entry.fields.Themes)
+        return data.push(entry.fields)
       })
-      // console.log(data)
-      return null
+      return data
     })
-    .then(result => {
-      return res.json(result)
+    .then(data => {
+      return res.json(data)
     })
     .catch(err => {
       console.log(err.message)

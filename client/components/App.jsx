@@ -8,7 +8,7 @@ import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 const App = (props) => {
-  const { authenticated } = props
+  // const { authenticated } = props
 
   return (<>
     <div className="d-flex mx-auto">
